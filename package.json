@@ -57,5 +57,5 @@
   },
   "scripts": {
      "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
-    },
+	}
 }
