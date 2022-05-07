@@ -4,4 +4,5 @@ module.exports = {
   },
 
   transpileDependencies: ['vuetify'],
+  publicPath: '/deploy-to-gh-pages/'
 }
