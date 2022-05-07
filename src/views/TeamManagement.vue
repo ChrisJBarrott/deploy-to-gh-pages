@@ -150,7 +150,7 @@
             </h6>
 
             <h4 class="text-h4 mb-3 text--primary">
-              John Leider
+              EJ the boss man
             </h4>
 
             <p class="text--secondary">
