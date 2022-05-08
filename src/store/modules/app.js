@@ -30,7 +30,7 @@ const state = {
       title: 'Team Management',
       icon: 'mdi-account',
       to: '/management/',
-    },
+    }, /*,
     {
       title: 'Regular Tables',
       icon: 'mdi-clipboard-outline',
@@ -55,7 +55,7 @@ const state = {
       title: 'Notifications',
       icon: 'mdi-bell',
       to: '/components/notifications/',
-    },
+    }, */
   ],
 }
 
