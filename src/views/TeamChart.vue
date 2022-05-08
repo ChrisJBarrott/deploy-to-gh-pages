@@ -1,19 +1,27 @@
 <template>
-  <div>
-    <hr>
-    <div class="chart-wrapper">
-      <apexchart
-        width="800" type="boxPlot"
-        :options="options"
-        :series="series">
-      </apexchart>
+  <v-container
+      id="regular-charts-view"
+      fluid
+      tag="section"
+    >
+    <div>
+      <hr>
+      <div class="chart-wrapper">
+        <apexchart
+          width="800"
+          type="boxPlot"
+          :options="options"
+          :series="series"
+          >
+        </apexchart>
+      </div>
+      <hr>
     </div>
-    <hr>
-  </div>
+  </v-container>
 </template>
 
 <script>
- export default {
+  export default {
   name: 'boxplot',
   data: () => ({
     options: {
@@ -34,7 +42,7 @@
         },
 
         title: {
-          text: 'Box Test',
+          text: 'Test Chart - Please Ignore',
           align: 'center',
           style: {
             fontSize:  '20px',

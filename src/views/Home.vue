@@ -188,7 +188,7 @@
     </v-row>
     <v-carousel>
       <v-carousel-item
-        v-for="(item,i) in items"
+        v-for="(item,i) in items_pics"
         :key="i"
         :src="item.src"
         reverse-transition="fade-transition"
@@ -220,7 +220,7 @@
         data: {
           labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
           series: [
-            [5,6,7,8,9,10,11,12,13,15,17,20],
+            [5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 17, 20],
           ],
         },
         options: {
@@ -376,7 +376,7 @@
           icon: 'mdi-twitch',
           title: 'ATR Followers',
           value: '245',
-        } /* ,
+        }, /* ,
         {
           actionIcon: 'mdi-tag',
           actionText: 'Tracked from Google Analytics',
@@ -439,20 +439,20 @@
           },
         ],
       },
-      items: [
-          {
-            src: require("@/assets/ATR_pic1.jpg"),
-          },
-          {
-            src: require("@/assets/ATR_pic2.jpg"),
-          },
-          {
-            src: require("@/assets/ATR_pic3.jpg"),
-          },
-          {
-            src: require("@/assets/ATR_pic4.jpg"),
-          },
-        ],
+      items_pics: [
+        {
+          src: require('@/assets/ATR_pic1.jpg'),
+        },
+        {
+          src: require('@/assets/ATR_pic2.jpg'),
+        },
+        {
+          src: require('@/assets/ATR_pic3.jpg'),
+        },
+        {
+          src: require('@/assets/ATR_pic4.jpg'),
+        },
+      ],
     }),
 
     computed: {
