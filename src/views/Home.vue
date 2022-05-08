@@ -66,7 +66,7 @@
           </template>
         </material-stat-card>
       </v-col>
-
+      <!--
       <v-col
         cols="12"
         md="6"
@@ -184,8 +184,17 @@
             </v-tab-item>
           </v-tabs-items>
         </material-card>
-      </v-col>
+      </v-col> -->
     </v-row>
+    <v-carousel>
+      <v-carousel-item
+        v-for="(item,i) in items"
+        :key="i"
+        :src="item.src"
+        reverse-transition="fade-transition"
+        transition="fade-transition"
+      ></v-carousel-item>
+    </v-carousel>
   </v-container>
 </template>
 
@@ -203,15 +212,15 @@
 
     data: () => ({
       charts: [{
-        type: 'Bar',
+        type: 'Line',
         color: 'primary',
-        title: 'Website Views',
-        subtitle: 'Last Campaign Performance',
-        time: 'updated 10 minutes ago',
+        title: 'Team Size',
+        subtitle: '<i class="mdi mdi-arrow-up green--text"></i><span class="green--text">40%</span>&nbsp;increase in drivers this month',
+        time: 'updated xx minutes ago',
         data: {
           labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
           series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
+            [5,6,7,8,9,10,11,12,13,15,17,20],
           ],
         },
         options: {
@@ -219,7 +228,7 @@
             showGrid: false,
           },
           low: 0,
-          high: 1000,
+          high: 40,
           chartPadding: {
             top: 0,
             right: 5,
@@ -240,9 +249,9 @@
       }, {
         type: 'Line',
         color: 'success',
-        title: 'Daily Sales',
-        subtitle: '<i class="mdi mdi-arrow-up green--text"></i><span class="green--text">55%</span>&nbsp;increase in today\'s sales',
-        time: 'updated 4 minutes ago',
+        title: 'Daily Racing Laps',
+        subtitle: '<i class="mdi mdi-arrow-up green--text"></i><span class="green--text">55%</span>&nbsp;increase in laps today',
+        time: 'updated xx minutes ago',
         data: {
           labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
           series: [
@@ -260,7 +269,7 @@
             left: 0,
           },
         },
-      }, {
+      /* }, {
         type: 'Line',
         color: 'info',
         title: 'Completed Tasks',
@@ -282,7 +291,7 @@
             bottom: 0,
             left: 0,
           },
-        },
+        }, */
       }],
       headers: [
         {
@@ -353,13 +362,21 @@
       ],
       stats: [
         {
-          actionIcon: 'mdi-alert',
+          actionIcon: 'mdi-history',
           actionText: 'Get More Space...',
           color: '#FD9A13',
-          icon: 'mdi-sofa-single',
-          title: 'Bookings',
-          value: '184',
+          icon: 'mdi-radar',
+          title: 'Laps This Week',
+          value: '1084',
         },
+        {
+          actionIcon: 'mdi-history',
+          actionText: 'Updated xx mins ago',
+          color: 'info',
+          icon: 'mdi-twitch',
+          title: 'ATR Followers',
+          value: '245',
+        } /* ,
         {
           actionIcon: 'mdi-tag',
           actionText: 'Tracked from Google Analytics',
@@ -375,15 +392,7 @@
           icon: 'mdi-store',
           title: 'Revenue',
           value: '$34,245',
-        },
-        {
-          actionIcon: 'mdi-history',
-          actionText: 'Just Updated',
-          color: 'info',
-          icon: 'mdi-twitter',
-          title: 'Followers',
-          value: '+245',
-        },
+        } */
       ],
       tabs: 0,
       tasks: {
@@ -430,6 +439,20 @@
           },
         ],
       },
+      items: [
+          {
+            src: require("@/assets/ATR_pic1.jpg"),
+          },
+          {
+            src: require("@/assets/ATR_pic2.jpg"),
+          },
+          {
+            src: require("@/assets/ATR_pic3.jpg"),
+          },
+          {
+            src: require("@/assets/ATR_pic4.jpg"),
+          },
+        ],
     }),
 
     computed: {

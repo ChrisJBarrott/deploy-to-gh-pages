@@ -71,19 +71,7 @@
         ></v-sparkline>
       </template>
     </v-data-table>
-
     <div class="py-3" />
-
-    <v-carousel>
-      <v-carousel-item
-        v-for="(item,i) in items"
-        :key="i"
-        :src="item.src"
-        reverse-transition="fade-transition"
-        transition="fade-transition"
-      ></v-carousel-item>
-    </v-carousel>
-
   </v-container>
 </template>
 
@@ -127,20 +115,6 @@ export default {
          { text: 'iR (90 Days)', sortable: false, value: 'chart' },
        ],
        drivers: driverData,
-     items: [
-         {
-           src: require("@/assets/ATR_pic1.jpg"),
-         },
-         {
-           src: require("@/assets/ATR_pic2.jpg"),
-         },
-         {
-           src: require("@/assets/ATR_pic3.jpg"),
-         },
-         {
-           src: require("@/assets/ATR_pic4.jpg"),
-         },
-       ],
      }
    },
    methods: {
