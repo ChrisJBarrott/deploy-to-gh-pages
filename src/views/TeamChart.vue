@@ -5,25 +5,84 @@
       tag="section"
     >
     <div>
-      <hr>
+
       <div class="chart-wrapper">
+        <apexchart
+        width="100%"
+        height="650"
+        type="line"
+        responsive="true"
+        :options="options"
+        :series="series">
+        </apexchart>
+        <!--
         <apexchart
           width="800"
           type="boxPlot"
           :options="options"
           :series="series"
           >
-        </apexchart>
+        </apexchart> -->
       </div>
-      <hr>
+
     </div>
   </v-container>
 </template>
 
 <script>
+  import iRData from '@/assets/iRData.json'
   export default {
   name: 'boxplot',
   data: () => ({
+          options: {
+              chart: {
+                  id: 'vuechart-example',
+                  animations: {enabled: false},
+              },
+              xaxis: {
+                  type: 'datetime',
+              },
+              stroke: {
+                width: 3,
+                curve: 'smooth'
+              },
+              legend: {
+                  show: true,
+                  showForSingleSeries: true
+              },
+              theme: {
+                mode: 'light',
+                palette: 'palette6',
+                monochrome: {
+                    enabled: false,
+                    color: '#255aee',
+                    shadeTo: 'light',
+                    shadeIntensity: 0.65
+                },
+              },
+              yaxis: {
+                title: {
+                  text: 'iRating'
+                }
+              },
+              responsive: [{
+                  breakpoint: 800,
+                  options: {},
+              }],
+          },
+          series: iRData
+              /*
+              [
+                  [1486684800000, 34],
+                  [1486771200000, 43],
+                  [1486857600000, 31],
+                  [1486944000000, 43],
+                  [1487030400000, 33],
+                  [1487116800000, 52]
+              ]
+              */
+
+    /*
     options: {
         chart: {
           id: 'vuechart-example',
@@ -124,16 +183,14 @@
                     }
                   ]
                 }
-              ],
-
-
+              ], */
   })
 }
 </script>
 
 <style scoped>
 div.chart-wrapper {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center
 }
