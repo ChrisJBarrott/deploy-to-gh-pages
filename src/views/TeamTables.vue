@@ -1,19 +1,19 @@
 <template>
   <v-container
     id="regular-tables-view"
+    style="max-width: 1000px; position: relative;"
     fluid
     tag="section"
+    class="pa-0"
   >
     <!--<view-intro
       heading="Simple Tables"
       link="components/simple-tables"
+    /> -->
+
+    <p
+      v-text="titleText"
     />
-    <section class="mb-12 text-center">
-      <h1
-        class="mb-2 text-h3"
-        v-text="titleText"
-      />
-    </section>-->
 
     <v-data-table
       :headers="headers"
@@ -25,6 +25,7 @@
       group-by="category"
       sort-by="roadrating"
       sort-desc= "true"
+      mobile-breakpoint='NaN'
     >
 
       <!-- Customise the categories -->
@@ -77,6 +78,7 @@
 
 <script>
 import driverData from '@/assets/driverData.json'
+import logData from '@/assets/logData.json'
 const gradients = [
   ["#222"],
   ["#42b3f4"],
@@ -99,13 +101,12 @@ export default {
       fill: false,
       type: "trend",
       autoLineWidth: false,
-      titleText: "Team Dashboard",
+      titleText: logData.updatedate,
       //categoryOrder: ["Pro", "Team", "Beer"],
       headers: [
          {
            text: 'Drivers',
            align: 'start',
-           sortable: false,
            value: 'name',
          },
          { text: 'iRacing ID', value: 'irid' },
